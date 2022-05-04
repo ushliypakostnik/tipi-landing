@@ -1,0 +1,33 @@
+// Typography
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+// Typographic Variables
+//////////////////////////////////////////////////////
+
+// Guide
+
+$letter-spacing = {
+  normal: normal
+}
+
+$font-weight = {
+  regular: 400,
+  bold: 700,
+}
+
+// Universal Typographic Mixin
+//////////////////////////////////////////////////////
+
+// We use one, only one, Karl, a universal mixin for all cases !!!!!!!!!!
+
+$text($name)
+  font-family "Golos Text"
+  letter-spacing $letter-spacing.normal
+
+  // Заголовки
+  if $name == "apaches"
+    font-size 72px
+    line-height 72px
+    font-weight $font-weight.bold

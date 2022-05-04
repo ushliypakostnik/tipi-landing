@@ -1,0 +1,82 @@
+// Project mixins
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+// Фундаментальное отличие миксинов от плейсхолдеров в том что, кроме нюансов при компиляции -
+// плейсхолдеры, в отличие от параметризированных миксинов, не могут быть включены в медиа-запросы,
+// но сами, при этом, могут их использовать. Примеси могут принимать аргументы и самое важное - контент.
+
+// Media
+//////////////////////////////////////////////////////
+// Breakpoints in _variables.styl
+
+$no-gadgets()
+  @media only screen and (max-width $breakpoints.desktop--max)
+    {block}
+
+$desktop()
+  @media only screen and (min-width $breakpoints.desktop)
+    {block}
+
+$gadgets()
+  @media only screen and (max-width $breakpoints.tablet--max)
+    {block}
+
+$tablet()
+  @media only screen and (min-width $breakpoints.tablet) and (max-width $breakpoints.tablet--max)
+    {block}
+
+$not-mobile()
+  @media only screen and (min-width $breakpoints.tablet)
+    {block}
+
+$mobile()
+  @media only screen and (max-width $breakpoints.mobile--max)
+    {block}
+
+
+// Utilities
+//////////////////////////////////////////////////////
+// Миксины без аргументов дублируют плейсхолдеры,
+// чтобы можно было передать в медиа-миксины
+
+// Long string and blocks to ellipsis
+$lineOverflow()
+  @extend $lineOverflow
+
+// Защита для больших блоков текста, например в гридах
+$veryLongLettersProtection()
+  @extend $longLettersProtection
+
+$flexCenter()
+  display flex
+  align-items center
+  justify-content center
+
+
+$multiLineOverflow($lineheight = none, $lines = 1)
+  overflow hidden
+  text-overflow ellipsis
+  display block // Fallback for non-webkit
+  display -webkit-box
+  white-space normal
+  -webkit-line-clamp $lines
+  -webkit-box-orient vertical
+  max-height: $lineheight == none ? none : $lineheight * $lines
+
+
+// Elements
+//////////////////////////////////////////////////////
+
+$square($size)
+  width: $size;
+  height: $size;
+
+$circle($size)
+  border-radius: 50%;
+  $square($size)
+
+
+// Scrollbar
+$hideScrollbar()
+  @extend $hideScrollbar

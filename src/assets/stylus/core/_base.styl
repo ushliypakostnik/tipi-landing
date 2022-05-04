@@ -1,0 +1,50 @@
+// Base normalize and fonts to body
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+// Внимание! Не стоит добавлять в этот файл ничего, кроме того что должно быть абсолютно точно и везде!
+// Никакого "оформления" (кроме того что для :root и body), только нормализация и подготовка!
+
+:root
+  scroll-behavior smooth
+  min-width $breakpoints.min
+
+body
+  font-family 'Golos Text', sans-serif
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+  text-rendering optimizeSpeed
+  color $colors.text
+  overflow-x hidden
+
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+img,
+picture
+  max-width 100%
+  display block
+
+a
+  color inherit
+  text-decoration none
+
+address
+  font-style normal
+
+// No outline on focus controls!!!
+button,
+input,
+textarea,
+a
+  outline none !important
+
+  &:hover,
+  &:active,
+  &:focus
+    outline none !important
+
+table
+  width 100%

@@ -1,0 +1,57 @@
+@import "./_mixins";
+@import "./_typography";
+
+// Project placeholders
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+// Scrollbar
+
+$hideScrollbar
+  -webkit-overflow-scrolling touch
+  -ms-overflow-style none  /* IE and Edge */
+  scrollbar-width none  /* Firefox */
+
+  &::-webkit-scrollbar
+    display none
+
+// WebKit Scrollbar
+$customScrollbar
+  &::-webkit-scrollbar
+    width 4px
+
+  &::-webkit-scrollbar-track
+    background: transparent
+    border-radius 2px
+
+  &::-webkit-scrollbar-thumb
+    background #CDD3DF
+
+
+// Utilities
+//////////////////////////////////////////////////////
+
+$flexCenter
+  display flex
+  align-items center
+  justify-content center
+
+// Ellipsis to long string
+$lineOverflow
+  display block
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+// Защита для больших блоков текста, например в гридах
+$longLettersProtection
+  -ms-word-break break-all
+  word-break break-all
+  word-break break-word
+  -webkit-hyphens auto
+  -moz-hyphens auto
+  -ms-hyphens auto
+  hyphens auto
+
+
