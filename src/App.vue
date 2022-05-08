@@ -233,7 +233,7 @@ export default {
   transform translateZ(-1px) scale(2.1)
 
 .parallax__layer--bottom
-  transform translateZ(-1px) translateY(2300 * $pixel) scale(2.1)
+  transform translateZ(-1px) translateY(2350 * $pixel) scale(2.1)
 
 .wrapper
   padding 0 20vw
@@ -318,7 +318,7 @@ main
   background $colors.light
   position relative
 
-$top-height = 850
+$top-height = 900
 
 #image
   position absolute
@@ -326,7 +326,7 @@ $top-height = 850
   left 0
   right 0
   width 100%
-  height $top-height * $pixel + 10vw
+  height $top-height * $pixel + 12vw
   background url("./assets/images/forest.jpg") center bottom no-repeat
 
 #section1
