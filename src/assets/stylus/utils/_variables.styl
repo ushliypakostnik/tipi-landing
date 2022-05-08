@@ -3,15 +3,14 @@
 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
 
+$pixel = 0.052085vw
+
 // Breakpoints
 //////////////////////////////////////////////////////
 
 $breakpoints = {
-  min: 320px,
   tablet: 768px,
   desktop: 1024px,
-
-  max: 1280px, // для .wrapper лейаутов как "Наш Север"
 }
 $breakpoints["mobile--max"] = $breakpoints.tablet - 1
 $breakpoints["tablet--max"] = $breakpoints.desktop - 1
@@ -20,14 +19,14 @@ $breakpoints["tablet--max"] = $breakpoints.desktop - 1
 // Palette
 //////////////////////////////////////////////////////
 $colors = {
-  nina: #04153e,
-  masha: #171d1c,
-  katya: #ffffff,
-    sasha: #55691B,
+  green: #346025,
+  brown1: #b88119,
+  brown2: #a35b0f,
+  brown3: #b73913,
+  light: #f3efe5,
+  dark: #3f372f,
+  yellow: #ffc633,
 }
-// Dependencies colors
-$colors["text"] = $colors.nina
-$colors["dark"] = $colors.masha
 
 
 // Effects
