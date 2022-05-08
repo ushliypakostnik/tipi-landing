@@ -233,7 +233,7 @@ export default {
   transform translateZ(-1px) scale(2.1)
 
 .parallax__layer--bottom
-  transform translateZ(-1px) translateY(2350 * $pixel) scale(2.1)
+  transform translateZ(-1px) translateY(2500 * $pixel) scale(2.1)
 
 .wrapper
   padding 0 20vw
@@ -428,7 +428,7 @@ $forest-height = 10vw
 
 .pre-footer
   width 100vw
-  height $forest-height
+  height $forest-height * 2
   background $colors.light
 
   +$gadgets()
