@@ -465,7 +465,7 @@ $forest-height = 10vw
   position absolute
   left 0
   right 0
-  bottom 560 * $pixel
+  bottom 550 * $pixel
   display flex
   text-align center
   justify-content space-between
