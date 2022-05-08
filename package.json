@@ -11,9 +11,7 @@
     "core-js": "3.6.5",
     "swiper": "5.4.5",
     "vue": "2.6.11",
-    "vue-awesome-swiper": "4.1.1",
-    "vue-parallaxy": "^1.1.1",
-    "vue-router": "3.5.3"
+    "vue-awesome-swiper": "4.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.5.0",

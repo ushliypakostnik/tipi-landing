@@ -1,96 +1,197 @@
 <template>
   <main role="main">
-    <div id="top">
-      <parallax :speedFactor="0.33" direction="down" breakpoint="(min-width: 1024px)">
-        <div id="image" />
-      </parallax>
-    </div>
+    <div class="parallax visible--desktop">
+      <div id="image" class="parallax__layer parallax__layer--back" />
 
-    <section id="section1">
-      <a href="mailto:foresthut@obp.ru" class="email">foresthut@obp.ru</a>
-      <a href="tel:+72282652328" class="phone">+7 (228) 265-23-28</a>
-      <div class="wrapper">
-        <div>
-          <div class="logo" />
-          <h1>ТИПИ НА ЗАКАЗ</h1>
-          <div class="decor">
-            <div />
-            <div />
+      <section id="section1" class="parallax__layer parallax__layer--base">
+        <a href="mailto:foresthut@obp.ru" class="email">foresthut@obp.ru</a>
+        <a href="tel:+72282652328" class="phone">+7 (228) 265-23-28</a>
+        <div class="wrapper">
+          <div>
+            <div class="logo" />
+            <h1>ТИПИ НА ЗАКАЗ</h1>
+            <div class="decor">
+              <div />
+              <div />
+              <div />
+            </div>
+            <h3>для комфортного отдыха в лесу</h3>
+            <a
+              href="https://t.me/forrestinforest"
+              class="button"
+              target="_blank"
+              >ЗАКАЗАТЬ</a
+            >
+            <div class="links">
+              <a href="https://vk.com/forrestinforest" target="_blank"
+                >VKontakte</a
+              >
+              <span>/</span>
+              <a
+                href="https://www.instagram.com/forrestinforest/"
+                target="_blank"
+                >Instagram</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="wave" />
+      </section>
+
+      <section id="section2">
+        <div class="wrapper">
+          <div>
+            <h2>Типи —</h2>
+            <h3>традиционное переносное жилище индейцев Великих Равнин</h3>
+            <br />
+            <h3>Если вы:</h3>
+            <ul>
+              <li>в душе настоящий индеец;</li>
+              <li>
+                часто выезжаете на природу с семьей или компанией друзей более,
+                чем на два дня;
+              </li>
+              <li>резидент лесных фестивалей и опен-эйров;</li>
+              <li>
+                человек, который любит комфорт и не против ради этого по
+                здоровому заморочиться,
+              </li>
+            </ul>
+            <h3>значит Типи — ваш выбор!</h3>
+          </div>
+        </div>
+
+        <div class="pre-footer" />
+      </section>
+
+      <footer
+        role="contentinfo"
+        class="parallax__layer parallax__layer--bottom"
+      >
+        <div class="forest" />
+        <div class="footer">
+          <div class="footer__logo" />
+          <div class="decor2">
             <div />
           </div>
-          <h3>для комфортного отдыха в лесу</h3>
-          <a href="https://t.me/forrestinforest" class="button" target="_blank">ЗАКАЗАТЬ</a>
-        <div class="links">
-          <a href="https://vk.com/forrestinforest" target="_blank">VKontakte</a>
-          <span>/</span>
-          <a href="https://www.instagram.com/forrestinforest/" target="_blank"
-            >Instagram</a
+          <div class="links">
+            <a href="https://vk.com/forrestinforest" target="_blank"
+              >VKontakte</a
+            >
+            <span>/</span>
+            <a href="https://www.instagram.com/forrestinforest/" target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </div>
+        <div class="bottom">
+          <a href="mailto:foresthut@obp.ru" class="bottom__email"
+            >foresthut@obp.ru</a
+          >
+          <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
+          <a href="tel:+72282652328" class="bottom__phone"
+            >+7 (228) 265-23-28</a
           >
         </div>
-        </div>
-      </div>
-      <div class="wave" />
-    </section>
+      </footer>
+    </div>
 
-    <section id="section2">
-      <div class="wrapper">
-        <div>
-          <h2>Типи —</h2>
-          <h3>традиционное переносное жилище индейцев Великих Равнин</h3>
-          <br />
-          <h3>Если вы:</h3>
-          <ul>
-            <li>в душе настоящий индеец;</li>
-            <li>
-              часто выезжаете на природу с семьей или компанией друзей более,
-              чем на два дня;
-            </li>
-            <li>резидент лесных фестивалей и опен-эйров;</li>
-            <li>
-              человек, который любит комфорт и не против ради этого по здоровому
-              заморочиться,
-            </li>
-          </ul>
-          <h3>значит Типи — ваш выбор!</h3>
-        </div>
-      </div>
-    </section>
+    <div class="visible--gadgets">
+      <div id="image" />
 
-    <footer role="contentinfo">
-      <div class="forest" />
-      <div class="footer">
-        <div class="footer__logo" />
-        <div class="decor2">
-          <div />
+      <section id="section1">
+        <a href="mailto:foresthut@obp.ru" class="email">foresthut@obp.ru</a>
+        <a href="tel:+72282652328" class="phone">+7 (228) 265-23-28</a>
+        <div class="wrapper">
+          <div>
+            <div class="logo" />
+            <h1>ТИПИ НА ЗАКАЗ</h1>
+            <div class="decor">
+              <div />
+              <div />
+              <div />
+            </div>
+            <h3>для комфортного отдыха в лесу</h3>
+            <a
+              href="https://t.me/forrestinforest"
+              class="button"
+              target="_blank"
+              >ЗАКАЗАТЬ</a
+            >
+            <div class="links">
+              <a href="https://vk.com/forrestinforest" target="_blank"
+                >VKontakte</a
+              >
+              <span>/</span>
+              <a
+                href="https://www.instagram.com/forrestinforest/"
+                target="_blank"
+                >Instagram</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="links">
-          <a href="https://vk.com/forrestinforest" target="_blank">VKontakte</a>
-          <span>/</span>
-          <a href="https://www.instagram.com/forrestinforest/" target="_blank"
-            >Instagram</a
+        <div class="wave" />
+      </section>
+
+      <section id="section2">
+        <div class="wrapper">
+          <div>
+            <h2>Типи —</h2>
+            <h3>традиционное переносное жилище индейцев Великих Равнин</h3>
+            <br />
+            <h3>Если вы:</h3>
+            <ul>
+              <li>в душе настоящий индеец;</li>
+              <li>
+                часто выезжаете на природу с семьей или компанией друзей более,
+                чем на два дня;
+              </li>
+              <li>резидент лесных фестивалей и опен-эйров;</li>
+              <li>
+                человек, который любит комфорт и не против ради этого по
+                здоровому заморочиться,
+              </li>
+            </ul>
+            <h3>значит Типи — ваш выбор!</h3>
+          </div>
+        </div>
+      </section>
+
+      <footer role="contentinfo">
+        <div class="forest" />
+        <div class="footer">
+          <div class="footer__logo" />
+          <div class="decor2">
+            <div />
+          </div>
+          <div class="links">
+            <a href="https://vk.com/forrestinforest" target="_blank"
+              >VKontakte</a
+            >
+            <span>/</span>
+            <a href="https://www.instagram.com/forrestinforest/" target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </div>
+        <div class="bottom">
+          <a href="mailto:foresthut@obp.ru" class="bottom__email"
+            >foresthut@obp.ru</a
+          >
+          <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
+          <a href="tel:+72282652328" class="bottom__phone"
+            >+7 (228) 265-23-28</a
           >
         </div>
-      </div>
-      <div class="bottom">
-        <a href="mailto:foresthut@obp.ru" class="bottom__email"
-          >foresthut@obp.ru</a
-        >
-        <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
-        <a href="tel:+72282652328" class="bottom__phone">+7 (228) 265-23-28</a>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </main>
 </template>
 
 <script>
-import Parallax from 'vue-parallaxy';
-
 export default {
   name: 'App',
-
-  components: {
-    Parallax,
-  },
 };
 </script>
 
@@ -102,6 +203,41 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
+// Pure CSS parallax
+.parallax
+  perspective 1px
+  perspective-origin-x 100%
+  height 100vh
+  overflow-x hidden
+  overflow-y auto
+
+.parallax__layer
+  transform-origin-x 100%
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+
+.visible--gadgets
+  display  none
+
+  +$gadgets()
+    display block
+
+.visible--desktop
+  +$gadgets()
+    display none
+
+.parallax__layer--base
+  transform translateZ(0)
+
+.parallax__layer--back
+  transform translateZ(-1px) scale(2.1)
+
+.parallax__layer--bottom
+  transform translateZ(-1px) translateY(2300 * $pixel) scale(2.1)
+
 .wrapper
   padding 0 20vw
 
@@ -110,6 +246,7 @@ export default {
   display inline-block
   color $colors.dark
   background $colors.yellow
+  transition all $effects.duration
   $header("aztecs")
 
   &:hover
@@ -155,6 +292,7 @@ export default {
 
 .links a
   text-decoration underline
+  transition color $effects.duration
   $text("apaches")
 
   &:hover
@@ -180,18 +318,10 @@ export default {
   right 60 * $pixel
 
 main
+  background $colors.light
   position relative
 
-$top-height = 900
-
-#top
-  position absolute
-  top 0
-  left 0
-  right 0
-  width 100%
-  height $top-height * $pixel + 10vw
-  background-size cover
+$top-height = 850
 
 #image
   position absolute
@@ -216,12 +346,14 @@ $top-height = 900
   $header("aleuts")
 
 #section2
+  position relative
+
   color $colors.dark
   background $colors.light
   height 700 * $pixel
-  transform translateY(-50 * $pixel)
 
 #section2 h2
+  margin-bottom 10 * $pixel
   color $colors.green
   $header("aleuts")
   font-weight $font-weight.bold
@@ -232,15 +364,19 @@ $top-height = 900
 #section2 ul
   margin-top 20 * $pixel
 
-#section2 ul li
+#section2 ul > li
   margin-bottom 20 * $pixel
   $text("comanche")
-  font-weight $font-weight.regular
+  font-weight 400
 
-  &:before
-    width 26 * $pixel
-    height 18 * $pixel
-    background url("./assets/images/check.svg") center center no-repeat
+#section2 ul > li::before
+  content ""
+  display inline-block
+  margin-right 20 * $pixel
+  width 52 * $pixel * 0.75
+  height 36 * $pixel * 0.75
+  background url("./assets/images/check.svg") center center no-repeat
+  background-size cover
 
 #section1 .wrapper,
 #section2 .wrapper
@@ -253,11 +389,12 @@ $top-height = 900
   text-align center
 
 #section2 .wrapper
-  transform translateY(-100 * $pixel)
+  transform translateY(-70 * $pixel)
 
 #section1 .button
   margin-top 40 * $pixel
   margin-bottom 20 * $pixel
+
 
 .logo
   width 280 * $pixel
@@ -276,13 +413,13 @@ $wave-height = 5.4vw
   margin-top -1 * $wave-height
   margin-left -1px
   margin-right -1px
-  transform translateY(-50 * $pixel)
+  transform translateY(2 * $pixel)
   background url("./assets/images/wave.svg") center bottom no-repeat
   background-size contain
 
 footer
   position relative
-  height 750 * $pixel
+  height 950 * $pixel
 
   .email,
   .phone
@@ -291,6 +428,14 @@ footer
     color $colors.light
 
 $forest-height = 10vw
+
+.pre-footer
+  width 100vw
+  height $forest-height
+  background $colors.light
+
+  +$gadgets()
+    display none
 
 .forest
   width 100vw
@@ -305,11 +450,10 @@ $forest-height = 10vw
 .footer
   height "calc(100% - %s)" % $forest-height
   background $colors.green
-  padding-top 50 * $pixel
 
 .footer__logo
-  width 200 * $pixel
-  height 200 * $pixel
+  width 170 * $pixel
+  height 170 * $pixel
   margin 0 auto 40 * $pixel
   border-radius 50%
   background url("./assets/images/logo--mono.svg") center center no-repeat
@@ -321,11 +465,14 @@ $forest-height = 10vw
   position absolute
   left 0
   right 0
-  bottom 0
+  bottom 560 * $pixel
   display flex
   text-align center
   justify-content space-between
-  padding (20 * $pixel) (60 * $pixel)
+  padding (20 * $pixel) (110 * $pixel)
+
+  +$gadgets()
+    bottom 0
 
   &__email,
   &__phone
