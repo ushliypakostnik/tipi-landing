@@ -416,7 +416,7 @@ $wave-height = 5.4vw
 
 footer
   position relative
-  height 950 * $pixel
+  height 1200 * $pixel
 
   .email,
   .phone
@@ -440,7 +440,7 @@ $forest-height = 10vw
   margin-top -1 * $forest-height
   margin-left -1px
   margin-right -1px
-  transform translateY(2 * $pixel)
+  transform translateY(4 * $pixel)
   background url("./assets/images/footer.svg") center bottom no-repeat
   background-size contain
 
@@ -449,9 +449,10 @@ $forest-height = 10vw
   background $colors.green
 
 .footer__logo
-  width 170 * $pixel
-  height 170 * $pixel
+  width 180 * $pixel
+  height 180 * $pixel
   margin 0 auto 40 * $pixel
+  transform translateY(4 * $pixel)
   border-radius 50%
   background url("./assets/images/logo--mono.svg") center center no-repeat
   background-size cover
@@ -459,10 +460,11 @@ $forest-height = 10vw
 .bottom
   background $colors.dark
   width 100%
+  height 500 * $pixel
   position absolute
   left 0
   right 0
-  bottom 550 * $pixel
+  bottom 300 * $pixel
   display flex
   text-align center
   justify-content space-between
