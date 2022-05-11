@@ -1,9 +1,21 @@
 <template>
   <main role="main">
-    <div class="parallax visible--desktop">
-      <div id="image" class="parallax__layer parallax__layer--back" />
+    <div id="scroll" :class="{ parallax: isDesktop }" @scroll="onScroll">
+      <div
+        id="image"
+        :class="{
+          parallax__layer: isDesktop,
+          'parallax__layer--back': isDesktop,
+        }"
+      />
 
-      <section id="section1" class="parallax__layer parallax__layer--base">
+      <section
+        id="section1"
+        :class="{
+          parallax__layer: isDesktop,
+          'parallax__layer--base': isDesktop,
+        }"
+      >
         <a href="mailto:foresthut@obp.ru" class="email">foresthut@obp.ru</a>
         <a href="tel:+72282652328" class="phone">+7 (228) 265-23-28</a>
         <div class="wrapper">
@@ -66,7 +78,10 @@
 
       <footer
         role="contentinfo"
-        class="parallax__layer parallax__layer--bottom"
+        :class="{
+          parallax__layer: isDesktop,
+          'parallax__layer--bottom': isDesktop,
+        }"
       >
         <div class="forest" />
         <div class="footer">
@@ -84,114 +99,74 @@
             >
           </div>
         </div>
-        <div class="bottom">
-          <a href="mailto:foresthut@obp.ru" class="bottom__email"
-            >foresthut@obp.ru</a
-          >
-          <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
-          <a href="tel:+72282652328" class="bottom__phone"
-            >+7 (228) 265-23-28</a
-          >
-        </div>
       </footer>
     </div>
 
-    <div class="visible--gadgets">
-      <div id="image" />
-
-      <section id="section1">
-        <a href="mailto:foresthut@obp.ru" class="email">foresthut@obp.ru</a>
-        <a href="tel:+72282652328" class="phone">+7 (228) 265-23-28</a>
-        <div class="wrapper">
-          <div>
-            <div class="logo" />
-            <h1>ТИПИ НА ЗАКАЗ</h1>
-            <div class="decor">
-              <div />
-              <div />
-              <div />
-            </div>
-            <h3>для комфортного отдыха в лесу</h3>
-            <a
-              href="https://t.me/forrestinforest"
-              class="button"
-              target="_blank"
-              >ЗАКАЗАТЬ</a
-            >
-            <div class="links">
-              <a href="https://vk.com/forrestinforest" target="_blank"
-                >VKontakte</a
-              >
-              <span>/</span>
-              <a
-                href="https://www.instagram.com/forrestinforest/"
-                target="_blank"
-                >Instagram</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="wave" />
-      </section>
-
-      <section id="section2">
-        <div class="wrapper">
-          <div>
-            <h2>Типи —</h2>
-            <h3>традиционное переносное жилище индейцев Великих Равнин</h3>
-            <br />
-            <h3>Если вы:</h3>
-            <ul>
-              <li>в душе настоящий индеец;</li>
-              <li>
-                часто выезжаете на природу с семьей или компанией друзей более,
-                чем на два дня;
-              </li>
-              <li>резидент лесных фестивалей и опен-эйров;</li>
-              <li>
-                человек, который любит комфорт и не против ради этого по
-                здоровому заморочиться,
-              </li>
-            </ul>
-            <h3>значит Типи — ваш выбор!</h3>
-          </div>
-        </div>
-      </section>
-
-      <footer role="contentinfo">
-        <div class="forest" />
-        <div class="footer">
-          <div class="footer__logo" />
-          <div class="decor2">
-            <div />
-          </div>
-          <div class="links">
-            <a href="https://vk.com/forrestinforest" target="_blank"
-              >VKontakte</a
-            >
-            <span>/</span>
-            <a href="https://www.instagram.com/forrestinforest/" target="_blank"
-              >Instagram</a
-            >
-          </div>
-        </div>
-        <div class="bottom">
-          <a href="mailto:foresthut@obp.ru" class="bottom__email"
-            >foresthut@obp.ru</a
-          >
-          <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
-          <a href="tel:+72282652328" class="bottom__phone"
-            >+7 (228) 265-23-28</a
-          >
-        </div>
-      </footer>
-    </div>
+    <transition name="fade">
+      <div
+        v-if="isBottom"
+        class="bottom"
+        :style="`width: calc(100% - ${scrollbarWidth}px)`"
+      >
+        <a href="mailto:foresthut@obp.ru" class="bottom__email"
+          >foresthut@obp.ru</a
+        >
+        <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
+        <a href="tel:+72282652328" class="bottom__phone">+7 (228) 265-23-28</a>
+      </div>
+    </transition>
   </main>
 </template>
 
 <script>
+import ScreenHelper from '@/utils/screen-helper.js';
+
 export default {
   name: 'App',
+
+  data() {
+    return {
+      isBottom: false,
+      scrollbarWidth: null,
+      isDesktop: null,
+      isTablet: null,
+      isMobile: null,
+    };
+  },
+
+  mounted() {
+    this.setView();
+
+    window.addEventListener('resize', this.onWindowResize, false);
+    window.addEventListener('scroll', this.onScroll);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onWindowResize, false);
+    window.removeEventListener('scroll', this.onScroll);
+  },
+
+  methods: {
+    setView() {
+      this.isDesktop = ScreenHelper.isDesktop();
+      this.isTablet = ScreenHelper.isTablet();
+      this.isMobile = ScreenHelper.isMobile();
+    },
+
+    onScroll() {
+      const scroll = document.getElementById('scroll');
+      if (this.isDesktop && scroll.scrollTop > 900) {
+        if (!this.isBottom) {
+          this.scrollbarWidth = ScreenHelper.getScrollbarWidth();
+          this.isBottom = true;
+        }
+      } else if (this.isBottom) this.isBottom = false;
+    },
+
+    onWindowResize() {
+      this.setView();
+    },
+  },
 };
 </script>
 
@@ -215,16 +190,6 @@ export default {
   right 0
   bottom 0
   left 0
-
-.visible--gadgets
-  display  none
-
-  +$gadgets()
-    display block
-
-.visible--desktop
-  +$gadgets()
-    display none
 
 .parallax__layer--base
   transform translateZ(0)
@@ -408,8 +373,8 @@ $wave-height = 5.4vw
   width 100vw
   height $wave-height
   margin-top -1 * $wave-height
-  margin-left -1px
-  margin-right -1px
+  margin-left -10px
+  margin-right -10px
   transform translateY(2 * $pixel)
   background url("./assets/images/wave.svg") center bottom no-repeat
   background-size contain
@@ -460,11 +425,10 @@ $forest-height = 10vw
 .bottom
   background $colors.dark
   width 100%
-  height 500 * $pixel
   position absolute
   left 0
   right 0
-  bottom 300 * $pixel
+  bottom 0
   display flex
   text-align center
   justify-content space-between

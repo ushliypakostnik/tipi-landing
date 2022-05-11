@@ -12,9 +12,6 @@ const ScreenHelper = (() => {
 
   const TABLET = DESIGN.BREAKPOINTS.tablet;
   const DESKTOP = DESIGN.BREAKPOINTS.desktop;
-  const MIDDLE = DESIGN.BREAKPOINTS.middle;
-  const LARGE = DESIGN.BREAKPOINTS.large;
-  const SUPER = DESIGN.BREAKPOINTS.super;
 
   const isMobile = () => {
     return window.matchMedia(`(max-width: ${TABLET - 1}px)`).matches;
@@ -28,26 +25,6 @@ const ScreenHelper = (() => {
 
   const isDesktop = () => {
     return window.matchMedia(`(min-width: ${DESKTOP}px)`).matches;
-  };
-
-  const isDesktopSmall = () => {
-    return window.matchMedia(
-      `(min-width: ${DESKTOP}px) and (max-width: ${MIDDLE - 1}px)`,
-    ).matches;
-  };
-
-  const isDesktopMiddle = () => {
-    return window.matchMedia(
-      `(min-width: ${MIDDLE}px) and (max-width: ${LARGE - 1}px)`,
-    ).matches;
-  };
-
-  const isDesktopLarge = () => {
-    return window.matchMedia(`(min-width: ${LARGE}px)`).matches;
-  };
-
-  const isSuper = () => {
-    return window.matchMedia(`(min-width: ${SUPER}px)`).matches;
   };
 
   const getOrientation = () => {
@@ -79,10 +56,6 @@ const ScreenHelper = (() => {
     isMobile,
     isTablet,
     isDesktop,
-    isDesktopSmall,
-    isDesktopMiddle,
-    isDesktopLarge,
-    isSuper,
     getOrientation,
     getPixelRatio,
     getScrollbarWidth,

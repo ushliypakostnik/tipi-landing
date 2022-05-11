@@ -7,6 +7,7 @@
 
 // Libs
 
+/*
 const swiperOptions = {
   slidesPerView: 'auto',
   loop: false,
@@ -20,6 +21,7 @@ const swiperOptions = {
     },
   },
 };
+*/
 
 // GUI
 export const DESIGN = {
