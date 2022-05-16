@@ -10,6 +10,8 @@ import App from './App.vue';
 Vue.use(Logger);
 Vue.use(VueAwesomeSwiper);
 
+import 'swiper/css/swiper.css';
+
 Vue.config.productionTip = false;
 
 new Vue({

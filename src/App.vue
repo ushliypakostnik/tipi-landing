@@ -56,6 +56,7 @@
             <h2>Типи —</h2>
             <h3>традиционное переносное жилище индейцев Великих Равнин</h3>
             <br />
+            <br />
             <h3>Если вы:</h3>
             <ul>
               <li>в душе настоящий индеец;</li>
@@ -69,10 +70,181 @@
                 здоровому заморочиться,
               </li>
             </ul>
+            <br />
             <h3>значит Типи — ваш выбор!</h3>
           </div>
         </div>
+      </section>
 
+      <section id="section3">
+        <div class="pattern pattern--top" />
+        <div class="pattern pattern--bottom" />
+        <swiper class="swiper--auto-width" :options="options">
+          <swiper-slide>
+            <div class="slide--1" />
+          </swiper-slide>
+          <swiper-slide>
+            <div class="slide--2" />
+          </swiper-slide>
+          <swiper-slide>
+            <div class="slide--3" />
+          </swiper-slide>
+          <swiper-slide>
+            <div class="slide--4" />
+          </swiper-slide>
+          <swiper-slide>
+            <div class="slide--5" />
+          </swiper-slide>
+          <swiper-slide>
+            <div class="slide--6" />
+          </swiper-slide>
+
+          <div slot="button-prev" class="swiper-button-prev" />
+          <div slot="button-next" class="swiper-button-next" />
+        </swiper>
+      </section>
+
+      <section id="section4">
+        <div class="wrapper">
+          <div class="grid1">
+            <div>
+              <h3>Тепло</h3>
+              <br />
+              <p class="bold">Костер в палатке! О чем еще можно мечтать?</p>
+              <br />
+              <p>
+                Всегда тепло, уютно, не нужно выходить, чтобы приготовить еду
+                или сварить кофе. Можете быть уверены, что ночью не замерзнете,
+                даже если на улице резко похолодает.
+              </p>
+            </div>
+            <div>
+              <h3>Удобно</h3>
+              <br />
+              <p class="bold">
+                В типи с комфортом размещается до шести человек.
+              </p>
+              <br />
+              <p>
+                Идеально для отдыха семьей или небольшой компанией. Наконец-то
+                хватит пространства для всех вещей и не нужно терпеть неудобства
+                от тесноты.
+              </p>
+            </div>
+            <div>
+              <h3>Надежно</h3>
+              <br />
+              <p class="bold">
+                Типи сшита из высокопрочной ткани — Оксфорд Рип Стоп.
+              </p>
+              <br />
+              <p>
+                Ей не страшна непогода и ее непросто порвать в отличие от
+                тонкого материала туристической палатки. Конструкция типи
+                такова, что в ней безопасно при порывах ветра, она устойчива в
+                любую погоду.
+              </p>
+            </div>
+          </div>
+          <div class="center">
+            <p>
+              Типи — это не просто палатки, это целые дома. Почти такие же, как
+              у индейцев, только делают их не из шкур оленей, а из прочных
+              тканей с водостойкой пропиткой.
+            </p>
+            <br />
+            <p>
+              Внутри можно разводить костёр, готовить еду, сушить одежду и
+              наблюдать сквозь окошко вентиляции за падающими звёздами!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="section5">
+        <div id="back" />
+        <div class="wrapper">
+          <div class="grid2">
+            <div>
+              <div class="card">
+                <div>
+                  <h3>Легкий</h3>
+                  <p class="price">21 500<span class="ru" /></p>
+                </div>
+                <ul>
+                  <li>Материал тента — Оксфорд 240 Рип Стоп</li>
+                  <li>Диаметр — 4 м</li>
+                  <li>Цвет — оливковый</li>
+                  <li>Внутренний полог</li>
+                  <li>Набор оттяжек</li>
+                  <li>Металлические колышки</li>
+                </ul>
+                <div class="button-wrapper">
+                  <a
+                    href="https://t.me/forrestinforest"
+                    class="button"
+                    target="_blank"
+                    >ЗАКАЗАТЬ</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="card">
+                <div>
+                  <h3>Стандартный</h3>
+                  <p class="price">24 750<span class="ru" /></p>
+                </div>
+                <ul>
+                  <li>Материал тента — Оксфорд 600 Рип Стоп</li>
+                  <li>Диаметр — 4 м</li>
+                  <li>Цвет — серый</li>
+                  <li>Внутренний полог</li>
+                  <li>Набор оттяжек</li>
+                  <li>Металлические колышки</li>
+                  <li>Тренога для костра</li>
+                </ul>
+                <div class="button-wrapper">
+                  <a
+                    href="https://t.me/forrestinforest"
+                    class="button"
+                    target="_blank"
+                    >ЗАКАЗАТЬ</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="card">
+                <div>
+                  <h3>Фестивальный</h3>
+                  <p class="price">от 40 000<span class="ru" /></p>
+                </div>
+                <ul>
+                  <li>Материал тента — Оксфорд 600 Рип Стоп</li>
+                  <li>Диаметр — 6 м</li>
+                  <li>Цвет — на выбор</li>
+                  <li>Внутренний полог</li>
+                  <li>Двойной набор оттяжек</li>
+                  <li>Металлические колышки</li>
+                  <li>Тренога для костра</li>
+                  <li>Художественная роспись</li>
+                </ul>
+                <div class="button-wrapper">
+                  <a
+                    href="https://t.me/forrestinforest"
+                    class="button"
+                    target="_blank"
+                    >ЗАКАЗАТЬ</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section6">
         <div class="pre-footer" />
       </section>
 
@@ -104,10 +276,18 @@
 
     <transition name="fade">
       <div
-        v-if="isBottom"
+        v-if="isBottom && isDesktop"
         class="bottom"
         :style="`width: calc(100% - ${scrollbarWidth}px)`"
       >
+        <a href="mailto:foresthut@obp.ru" class="bottom__email"
+          >foresthut@obp.ru</a
+        >
+        <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
+        <a href="tel:+72282652328" class="bottom__phone">+7 (228) 265-23-28</a>
+      </div>
+
+      <div v-else-if="!isDesktop" class="bottom">
         <a href="mailto:foresthut@obp.ru" class="bottom__email"
           >foresthut@obp.ru</a
         >
@@ -121,6 +301,16 @@
 <script>
 import ScreenHelper from '@/utils/screen-helper.js';
 
+const options = {
+  slidesPerView: 'auto',
+  loop: false,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {},
+};
+
 export default {
   name: 'App',
 
@@ -131,6 +321,7 @@ export default {
       isDesktop: null,
       isTablet: null,
       isMobile: null,
+      options,
     };
   },
 
@@ -198,10 +389,10 @@ export default {
   transform translateZ(-1px) scale(2.1)
 
 .parallax__layer--bottom
-  transform translateZ(-1px) translateY(2500 * $pixel) scale(2.1)
+  transform translateZ(-1px) translateY(4950 * $pixel) scale(2.1)
 
 .wrapper
-  padding 0 20vw
+  padding 0 17vw
 
 .button
   padding 0.25vw 3vw
@@ -209,7 +400,7 @@ export default {
   color $colors.dark
   background $colors.yellow
   transition all $effects.duration
-  $header("aztecs")
+  $header("crow")
 
   &:hover
     color $colors.light
@@ -283,16 +474,27 @@ main
   background $colors.light
   position relative
 
+.swiper-button-prev
+  background url("./assets/images/left.svg") center center no-repeat
+
+.swiper-button-next
+  background url("./assets/images/right.svg") center center no-repeat
+
 $top-height = 900
 
 #image
   position absolute
-  top 0
+  top -100 * $pixel
   left 0
   right 0
   width 100%
   height $top-height * $pixel + 12vw
   background url("./assets/images/forest.jpg") center bottom no-repeat
+
+  +$gadgets()
+    height 900 * $pixel
+    background url("./assets/images/forest.jpg") center bottom no-repeat
+    background-size cover
 
 #section1
   position relative
@@ -304,15 +506,180 @@ $top-height = 900
   text-shadow 0 (3 * $pixel) (3 * $pixel) rgba($colors.dark, 0.5)
   $header("navajo")
 
-#section1 h3
-  $header("aleuts")
+h3
+  $header("aztecs")
+
+#section4 h3
+  color $colors.green
+
+#section4 p
+  $text("apaches")
+
+.bold
+  font-weight $font-weight.bold !important
+
+.center
+  margin 50 * $pixel auto 0
+  max-width 60%
+  padding 30 * $pixel
+  border-radius 20 * $pixel
+  border 3 * $pixel dashed $colors.green
 
 #section2
   position relative
-
   color $colors.dark
   background $colors.light
+  height 650 * $pixel
+
+#section3
+  position relative
+  background $colors.light
+  height 800 * $pixel
+
+#section4
+  position relative
+  background $colors.light
   height 700 * $pixel
+  padding 100 * $pixel 0
+
+#section5
+  position relative
+  z-index 20
+  height 800 * $pixel
+  padding 150 * $pixel 0
+
+#back
+  position absolute
+  width 100%
+  height 100%
+  left 0
+  right 0
+  top 0
+  background url("./assets/images/back.svg") center center no-repeat
+  background-size contain
+
+#section6
+  position relative
+  z-index 10
+  background $colors.yellow
+  height 900 * $pixel
+
+  +$gadgets()
+    height 400 * $pixel
+    margin-top -200 * $pixel
+
+.swiper-container,
+.swiper-wrapper,
+.swiper-slide
+  height 100%
+
+.swiper-slide > div
+  height: 100%
+
+  &.slide--1
+    background url("./assets/images/slide1.jpg") center center no-repeat
+    background-size cover
+
+  &.slide--2
+    background url("./assets/images/slide2.jpg") center bottom no-repeat
+    background-size cover
+
+  &.slide--3
+    background url("./assets/images/slide3.jpg") center bottom no-repeat
+    background-size cover
+
+  &.slide--4
+    background url("./assets/images/slide4.jpg") center center no-repeat
+    background-size cover
+
+  &.slide--5
+    background url("./assets/images/slide5.jpg") center center no-repeat
+    background-size cover
+
+  &.slide--6
+    background url("./assets/images/slide6.jpg") center center no-repeat
+    background-size cover
+
+.pattern
+  position absolute
+  z-index 2000
+  width 100%
+  height 30 * $pixel
+  left 0
+  right 0
+
+  &--top
+    top -5 * $pixel
+    background url("./assets/images/pattern--top.svg") center center repeat-x
+    background-size contain
+
+  &--bottom
+    bottom -5 * $pixel
+    background url("./assets/images/pattern--bottom.svg") center center repeat-x
+    background-size contain
+
+.grid1
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  grid-gap 0 80 * $pixel
+
+.grid2
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  grid-gap 0 80 * $pixel
+
+.card
+  display flex
+  flex-direction column
+  justify-content space-between
+  background $colors.light
+  height 550 * $pixel
+  border-radius 20 * $pixel
+  padding 20 * $pixel 30 * $pixel 30 * $pixel
+  box-shadow 0 4 * $pixel 30 * $pixel rgba($colors.dark, 0.5)
+
+  h3
+    text-align center
+    color $colors.green
+
+  .button-wrapper
+    width 100%
+    text-align center
+
+  ul
+    height 280 * $pixel
+
+    > li
+      position relative
+      padding-left 30 * $pixel
+      margin-bottom 10 * $pixel
+      $text("apaches")
+
+    > li::before
+      position absolute
+      left 0
+      top 4 * $pixel
+      content ""
+      display inline-block
+      margin-right 10 * $pixel
+      width 52 * $pixel * 0.75 * 0.5
+      height 36 * $pixel * 0.75 * 0.5
+      background url("./assets/images/check.svg") center center no-repeat
+      background-size cover
+
+.price
+  text-align center
+  color $colors.green
+  $text("papago")
+
+.ru
+  display inline-block
+  margin-left 10 * $pixel
+  background url("./assets/images/ru.svg") center center no-repeat
+  background-size contain
+  width 28 * $pixel
+  height 30 * $pixel
+  transform translateY(2 * $pixel)
 
 #section2 h2
   margin-bottom 10 * $pixel
@@ -328,8 +695,7 @@ $top-height = 900
 
 #section2 ul > li
   margin-bottom 20 * $pixel
-  $text("comanche")
-  font-weight 400
+  $text("hopi")
 
 #section2 ul > li::before
   content ""
@@ -350,13 +716,13 @@ $top-height = 900
 #section1 .wrapper
   text-align center
 
-#section2 .wrapper
-  transform translateY(-70 * $pixel)
+#section5 .wrapper
+  position relative
+  z-index 99999
 
 #section1 .button
   margin-top 40 * $pixel
   margin-bottom 20 * $pixel
-
 
 .logo
   width 280 * $pixel
@@ -373,14 +739,13 @@ $wave-height = 5.4vw
   width 100vw
   height $wave-height
   margin-top -1 * $wave-height
-  margin-left -10px
-  margin-right -10px
-  transform translateY(2 * $pixel)
+  transform translateY(3 * $pixel)
   background url("./assets/images/wave.svg") center bottom no-repeat
-  background-size contain
+  background-size cover
 
 footer
   position relative
+  z-index 30
   height 1200 * $pixel
 
   .email,
@@ -389,12 +754,16 @@ footer
     bottom 60 * $pixel
     color $colors.light
 
+  +$gadgets()
+    height 700 * $pixel
+
 $forest-height = 10vw
 
 .pre-footer
   width 100vw
   height $forest-height * 2
-  background $colors.light
+  background $colors.yellow
+  transform translateY(-200 * $pixel)
 
   +$gadgets()
     display none
@@ -432,10 +801,11 @@ $forest-height = 10vw
   display flex
   text-align center
   justify-content space-between
-  padding (20 * $pixel) (110 * $pixel)
+  padding (10 * $pixel) (50 * $pixel)
 
   +$gadgets()
-    bottom 0
+    position relative
+    z-index 100
 
   &__email,
   &__phone
