@@ -287,8 +287,8 @@
 
     <transition name="fade">
       <div
-        v-if="isBottom && isDesktop"
-        class="bottom"
+        v-if="isBottom"
+        class="bottom bottom--desktop"
         :style="`width: calc(100% - ${scrollbarWidth}px)`"
       >
         <a href="mailto:foresthut@obp.ru" class="bottom__email"
@@ -298,11 +298,10 @@
         <a href="tel:+72282652328" class="bottom__phone">+7 (228) 265-23-28</a>
       </div>
 
-      <div v-else-if="!isDesktop" class="bottom">
+      <div class="bottom bottom--gadgets">
         <a href="mailto:foresthut@obp.ru" class="bottom__email"
           >foresthut@obp.ru</a
         >
-        <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
         <a href="tel:+72282652328" class="bottom__phone">+7 (228) 265-23-28</a>
       </div>
     </transition>
@@ -358,19 +357,21 @@ export default {
 
     onScroll() {
       const scroll = document.getElementById('scroll');
-      if (this.isDesktop && scroll.scrollTop > 500) {
-        if (!this.isBottom) {
-          this.scrollbarWidth = ScreenHelper.getScrollbarWidth();
-          this.isBottom = true;
-        }
-      } else if (this.isBottom) this.isBottom = false;
+      if (scroll) {
+        if (this.isDesktop && scroll.scrollTop > 500) {
+          if (!this.isBottom) {
+            this.scrollbarWidth = ScreenHelper.getScrollbarWidth();
+            this.isBottom = true;
+          }
+        } else if (this.isBottom) this.isBottom = false;
 
-      if (this.isDesktop && scroll.scrollTop > 3300) {
-        if (!this.isSun) {
-          this.scrollbarWidth = ScreenHelper.getScrollbarWidth();
-          this.isSun = true;
-        }
-      } else if (this.isSun) this.isSun = false;
+        if (this.isDesktop && scroll.scrollTop > 3300) {
+          if (!this.isSun) {
+            this.scrollbarWidth = ScreenHelper.getScrollbarWidth();
+            this.isSun = true;
+          }
+        } else if (this.isSun) this.isSun = false;
+      }
     },
 
     onWindowResize() {
@@ -431,7 +432,7 @@ section
   color $colors.dark
   background $colors.yellow
   transition all $effects.duration
-  border-radius 20 * $pixel
+  border-radius 40 * $pixel
   box-shadow 0 4 * $pixel 10 * $pixel rgba($colors.dark, 0.5)
   $header("crow")
 
@@ -1024,6 +1025,16 @@ $forest-height--mobile = 30vw
   justify-content space-between
   padding (10 * $pixel) (50 * $pixel)
 
+  &--gadgets
+    display none
+
+    +$gadgets()
+      display block
+
+  &--desktop
+    +$gadgets()
+      display none
+
   +$gadgets()
     position relative
     z-index 100
@@ -1038,7 +1049,4 @@ $forest-height--mobile = 30vw
     color $colors.light
     text-align center
     $header("crow")
-
-    +$gadgets()
-      display none
 </style>
