@@ -688,25 +688,49 @@ h3
     background url("./assets/images/slide1.jpg") center center no-repeat
     background-size cover
 
+    +$mobile()
+      background url("./assets/images/slide1--mobile.jpg") center center no-repeat
+      background-size cover
+
   &.slide--2
     background url("./assets/images/slide2.jpg") center bottom no-repeat
     background-size cover
+
+    +$mobile()
+      background url("./assets/images/slide2--mobile.jpg") center center no-repeat
+      background-size cover
 
   &.slide--3
     background url("./assets/images/slide3.jpg") center bottom no-repeat
     background-size cover
 
+    +$mobile()
+      background url("./assets/images/slide3--mobile.jpg") center center no-repeat
+      background-size cover
+
   &.slide--4
     background url("./assets/images/slide4.jpg") center center no-repeat
     background-size cover
+
+    +$mobile()
+      background url("./assets/images/slide4--mobile.jpg") center center no-repeat
+      background-size cover
 
   &.slide--5
     background url("./assets/images/slide5.jpg") center center no-repeat
     background-size cover
 
+    +$mobile()
+      background url("./assets/images/slide5--mobile.jpg") center center no-repeat
+      background-size cover
+
   &.slide--6
     background url("./assets/images/slide6.jpg") center center no-repeat
     background-size cover
+
+    +$mobile()
+      background url("./assets/images/slide6--mobile.jpg") center center no-repeat
+      background-size cover
 
 .pattern
   position absolute
