@@ -31,18 +31,37 @@ $text($name)
     font-size 18 * $pixel
     line-height 22 * $pixel
     font-weight $font-weight.regular
+
+    +$gadgets()
+      font-size 16 * $pixel-gadgets
+      line-height 20 * $pixel-gadgets
+
   if $name == "comanche"
     font-size 20 * $pixel
     line-height 26 * $pixel
     font-weight $font-weight.bold
+
+    +$gadgets()
+      font-size 18 * $pixel-gadgets
+      line-height 22 * $pixel-gadgets
+
   if $name == "hopi"
     font-size 20 * $pixel
     line-height 26 * $pixel
     font-weight $font-weight.regular
+
+    +$gadgets()
+      font-size 18 * $pixel-gadgets
+      line-height 22 * $pixel-gadgets
+
   if $name == "papago"
     font-size 36 * $pixel
     line-height 48 * $pixel
     font-weight $font-weight.bold
+
+    +$gadgets()
+      font-size 28 * $pixel-gadgets
+      line-height 36 * $pixel-gadgets
 
 // Заголовки
 $header($name)
@@ -53,15 +72,34 @@ $header($name)
     font-size 90 * $pixel
     line-height 90 * $pixel
     font-weight $font-weight.bold
+
+    +$gadgets()
+      font-size 64 * $pixel-gadgets
+      line-height 64 * $pixel-gadgets
+
   if $name == "aleuts"
     font-size 52 * $pixel
     line-height 52 * $pixel
     font-weight $font-weight.regular
+
+    +$gadgets()
+      font-size 36 * $pixel-gadgets
+      line-height 36 * $pixel-gadgets
+
   if $name == "aztecs"
     font-size 52 * $pixel
     line-height 70 * $pixel
     font-weight $font-weight.bold
+
+    +$gadgets()
+      font-size 36 * $pixel-gadgets
+      line-height 48 * $pixel-gadgets
+
   if $name == "crow"
     font-size 36 * $pixel
     line-height 48 * $pixel
     font-weight $font-weight.bold
+
+    +$gadgets()
+      font-size 28 * $pixel-gadgets
+      line-height 36 * $pixel-gadgets

@@ -38,7 +38,7 @@
               <a href="https://vk.com/forrestinforest" target="_blank"
                 >VKontakte</a
               >
-              <span>/</span>
+              <span class="circle" />
               <a
                 href="https://www.instagram.com/forrestinforest/"
                 target="_blank"
@@ -248,6 +248,17 @@
         <div class="pre-footer" />
       </section>
 
+      <transition name="fade">
+        <div
+          v-if="isSun"
+          class="sun"
+          :class="{
+            parallax__layer: isDesktop,
+            'parallax__layer--sun': isDesktop,
+          }"
+        />
+      </transition>
+
       <footer
         role="contentinfo"
         :class="{
@@ -265,7 +276,7 @@
             <a href="https://vk.com/forrestinforest" target="_blank"
               >VKontakte</a
             >
-            <span>/</span>
+            <span class="circle" />
             <a href="https://www.instagram.com/forrestinforest/" target="_blank"
               >Instagram</a
             >
@@ -317,6 +328,7 @@ export default {
   data() {
     return {
       isBottom: false,
+      isSun: false,
       scrollbarWidth: null,
       isDesktop: null,
       isTablet: null,
@@ -346,12 +358,19 @@ export default {
 
     onScroll() {
       const scroll = document.getElementById('scroll');
-      if (this.isDesktop && scroll.scrollTop > 900) {
+      if (this.isDesktop && scroll.scrollTop > 500) {
         if (!this.isBottom) {
           this.scrollbarWidth = ScreenHelper.getScrollbarWidth();
           this.isBottom = true;
         }
       } else if (this.isBottom) this.isBottom = false;
+
+      if (this.isDesktop && scroll.scrollTop > 3300) {
+        if (!this.isSun) {
+          this.scrollbarWidth = ScreenHelper.getScrollbarWidth();
+          this.isSun = true;
+        }
+      } else if (this.isSun) this.isSun = false;
     },
 
     onWindowResize() {
@@ -389,53 +408,104 @@ export default {
   transform translateZ(-1px) scale(2.1)
 
 .parallax__layer--bottom
+  z-index 300
   transform translateZ(-1px) translateY(4950 * $pixel) scale(2.1)
 
+.parallax__layer--sun
+  z-index 200
+  transform translateZ(-3px) translateX(-1000 * $pixel) translateY(3750 * $pixel) scale(3)
+
+section
+  +$gadgets()
+    overflow hidden
+
 .wrapper
-  padding 0 17vw
+  padding 0 350 * $pixel
+
+  +$gadgets()
+    padding 0 20 * $pixel-gadgets
 
 .button
-  padding 0.25vw 3vw
+  padding 10 * $pixel 80 * $pixel
   display inline-block
   color $colors.dark
   background $colors.yellow
   transition all $effects.duration
+  border-radius 20 * $pixel
+  box-shadow 0 4 * $pixel 10 * $pixel rgba($colors.dark, 0.5)
   $header("crow")
+
+  +$gadgets()
+    border-radius 40 * $pixel-gadgets
+    padding 10 * $pixel-gadgets 80 * $pixel-gadgets
+    box-shadow 0 4 * $pixel-gadgets 10 * $pixel-gadgets rgba($colors.dark, 0.5)
 
   &:hover
     color $colors.light
     background $colors.brown3
+    box-shadow none
 
 .decor
   display flex
   flex-direction row
   justify-content center
   align-items center
-  margin 0.75vw 0 0.5vw
+  margin 10 * $pixel 0
+
+  +$gadgets()
+    margin 10 * $pixel-gadgets 0
 
   > *
     background $colors.light
 
   > :nth-child(1)
   > :nth-child(3)
-    width 7vw
-    height 0.1vw
+    width 100 * $pixel
+    height 4 * $pixel
+
+    +$gadgets()
+      width 100 * $pixel-gadgets
+      height 4 * $pixel-gadgets
 
   > :nth-child(2)
-    margin 0 0.5vw
-    width 0.5vw
-    height 0.5vw
+    margin 0 10 * $pixel
+    width 10 * $pixel
+    height 10 * $pixel
     border-radius 50%
+
+    +$gadgets()
+      margin 0 10 * $pixel-gadgets
+      width 10 * $pixel-gadgets
+      height 10 * $pixel-gadgets
+
+.circle
+  background $colors.light
+  margin 0 10 * $pixel
+  width 10 * $pixel
+  height 10 * $pixel
+  border-radius 50%
+
+  +$gadgets()
+    margin 0 20 * $pixel-gadgets !important
+    width 10 * $pixel-gadgets
+    height 10 * $pixel-gadgets
 
 .decor2
   display flex
   justify-content center
-  margin 0.75vw 0 0.5vw
+  margin 10 * $pixel 0
+
+  +$gadgets()
+    margin 10 * $pixel-gadgets 0
 
   > *
     background $colors.light
-    width 20vw
-    height 0.1vw
+    width 200 * $pixel
+    height 4 * $pixel
+
+    +$gadgets()
+      width 200 * $pixel-gadgets
+      height 4 * $pixel-gadgets
 
 .links
   display flex
@@ -467,8 +537,14 @@ export default {
 .email
   left 60 * $pixel
 
+  +$gadgets()
+    left 20 * $pixel-gadgets
+
 .phone
   right 60 * $pixel
+
+  +$gadgets()
+    right 20 * $pixel-gadgets
 
 main
   background $colors.light
@@ -481,6 +557,7 @@ main
   background url("./assets/images/right.svg") center center no-repeat
 
 $top-height = 900
+$top-height--mobile = 650
 
 #image
   position absolute
@@ -489,12 +566,12 @@ $top-height = 900
   right 0
   width 100%
   height $top-height * $pixel + 12vw
-  background url("./assets/images/forest.jpg") center bottom no-repeat
+  background url("./assets/images/forest.jpg") center 66% no-repeat
 
   +$gadgets()
-    height 900 * $pixel
-    background url("./assets/images/forest.jpg") center bottom no-repeat
-    background-size cover
+    top 0
+    height $top-height--mobile * $pixel-gadgets
+    background url("./assets/images/forest.jpg") center center no-repeat
 
 #section1
   position relative
@@ -502,9 +579,15 @@ $top-height = 900
   color $colors.light
   background-size cover
 
+  +$gadgets()
+    height $top-height--mobile * $pixel-gadgets
+
 #section1 h1
   text-shadow 0 (3 * $pixel) (3 * $pixel) rgba($colors.dark, 0.5)
   $header("navajo")
+
+  +$gadgets()
+    text-shadow 0 (3 * $pixel-gadgets) (3 * $pixel-gadgets) rgba($colors.dark, 0.5)
 
 h3
   $header("aztecs")
@@ -525,16 +608,30 @@ h3
   border-radius 20 * $pixel
   border 3 * $pixel dashed $colors.green
 
+  +$gadgets()
+    margin 50 * $pixel-gadgets auto 0
+    max-width 100%
+    padding 30 * $pixel-gadgets
+    border-radius 20 * $pixel-gadgets
+    border 3 * $pixel-gadgets dashed $colors.green
+
 #section2
   position relative
   color $colors.dark
   background $colors.light
   height 650 * $pixel
 
+  +$gadgets()
+    height 650 * $pixel-gadgets
+
 #section3
   position relative
   background $colors.light
   height 800 * $pixel
+
+
+  +$gadgets()
+    height 700 * $pixel-gadgets
 
 #section4
   position relative
@@ -542,11 +639,19 @@ h3
   height 700 * $pixel
   padding 100 * $pixel 0
 
+  +$gadgets()
+    height 1100 * $pixel-gadgets
+    padding 50 * $pixel-gadgets 0
+
 #section5
   position relative
-  z-index 20
+  z-index 500
   height 800 * $pixel
   padding 150 * $pixel 0
+
+  +$gadgets()
+    height 1500 * $pixel-gadgets
+    padding 30 * $pixel-gadgets 0 0
 
 #back
   position absolute
@@ -558,6 +663,9 @@ h3
   background url("./assets/images/back.svg") center center no-repeat
   background-size contain
 
+  +$gadgets()
+    display none
+
 #section6
   position relative
   z-index 10
@@ -565,8 +673,7 @@ h3
   height 900 * $pixel
 
   +$gadgets()
-    height 400 * $pixel
-    margin-top -200 * $pixel
+    display none
 
 .swiper-container,
 .swiper-wrapper,
@@ -608,25 +715,46 @@ h3
   left 0
   right 0
 
+  +$gadgets()
+    height 16 * $pixel-gadgets
+
   &--top
     top -5 * $pixel
-    background url("./assets/images/pattern--top.svg") center center repeat-x
+    background url("./assets/images/pattern--top.svg") center top repeat-x
     background-size contain
+
+    +$gadgets()
+      background url("./assets/images/pattern-mobile--top.svg") top center repeat-x
+      background-size contain
+      top -3 * $pixel-gadgets
 
   &--bottom
     bottom -5 * $pixel
-    background url("./assets/images/pattern--bottom.svg") center center repeat-x
+    background url("./assets/images/pattern--bottom.svg") center bottom repeat-x
     background-size contain
+
+    +$gadgets()
+      background url("./assets/images/pattern-mobile--bottom.svg") bottom center repeat-x
+      background-size contain
+      bottom -3 * $pixel-gadgets
 
 .grid1
   display grid
   grid-template-columns repeat(3, 1fr)
   grid-gap 0 80 * $pixel
 
+  +$gadgets()
+    grid-template-columns repeat(1, 1fr)
+    grid-gap 40 * $pixel-gadgets
+
 .grid2
   display grid
   grid-template-columns repeat(3, 1fr)
   grid-gap 0 80 * $pixel
+
+  +$gadgets()
+    grid-template-columns repeat(1, 1fr)
+    grid-gap 40 * $pixel-gadgets
 
 .card
   display flex
@@ -637,6 +765,14 @@ h3
   border-radius 20 * $pixel
   padding 20 * $pixel 30 * $pixel 30 * $pixel
   box-shadow 0 4 * $pixel 30 * $pixel rgba($colors.dark, 0.5)
+
+  +$gadgets()
+    background #fff
+    display block
+    height auto
+    border-radius 20 * $pixel-gadgets
+    padding 20 * $pixel-gadgets 30 * $pixel-gadgets 30 * $pixel-gadgets
+    box-shadow 0 4 * $pixel-gadgets 20 * $pixel-gadgets rgba($colors.dark, 0.5)
 
   h3
     text-align center
@@ -649,11 +785,19 @@ h3
   ul
     height 280 * $pixel
 
+    +$gadgets()
+      margin-bottom 30 * $pixel-gadgets
+      height auto
+
     > li
       position relative
       padding-left 30 * $pixel
       margin-bottom 10 * $pixel
       $text("apaches")
+
+      +$gadgets()
+        padding-left 30 * $pixel-gadgets
+        margin-bottom 10 * $pixel-gadgets
 
     > li::before
       position absolute
@@ -667,10 +811,19 @@ h3
       background url("./assets/images/check.svg") center center no-repeat
       background-size cover
 
+      +$gadgets()
+        top 4 * $pixel-gadgets
+        margin-right 10 * $pixel-gadgets
+        width 52 * $pixel-gadgets * 0.75 * 0.5
+        height 36 * $pixel-gadgets * 0.75 * 0.5
+
 .price
   text-align center
   color $colors.green
   $text("papago")
+
+  +$gadgets()
+    margin-bottom 10 * $pixel-gadgets
 
 .ru
   display inline-block
@@ -681,11 +834,20 @@ h3
   height 30 * $pixel
   transform translateY(2 * $pixel)
 
+  +$gadgets()
+    margin-left 10 * $pixel-gadgets
+    width 14 * $pixel-gadgets * 1.25
+    height 15 * $pixel-gadgets * 1.25
+    transform translateY(0)
+
 #section2 h2
   margin-bottom 10 * $pixel
   color $colors.green
   $header("aleuts")
   font-weight $font-weight.bold
+
+  +$gadgets()
+    margin-bottom 10 * $pixel-gadgets
 
 #section2 h3
   $text("comanche")
@@ -693,11 +855,23 @@ h3
 #section2 ul
   margin-top 20 * $pixel
 
+  +$gadgets()
+    margin-top 20 * $pixel-gadgets
+
 #section2 ul > li
+  position relative
   margin-bottom 20 * $pixel
+  padding-left 60 * $pixel
   $text("hopi")
 
+  +$gadgets()
+    margin-bottom 20 * $pixel-gadgets
+    padding-left 40 * $pixel-gadgets
+
 #section2 ul > li::before
+  position absolute
+  left 0
+  top 0
   content ""
   display inline-block
   margin-right 20 * $pixel
@@ -705,6 +879,11 @@ h3
   height 36 * $pixel * 0.75
   background url("./assets/images/check.svg") center center no-repeat
   background-size cover
+
+  +$gadgets()
+    margin-right 20 * $pixel-gadgets
+    width 52 * $pixel-gadgets * 0.5
+    height 36 * $pixel-gadgets * 0.5
 
 #section1 .wrapper,
 #section2 .wrapper
@@ -724,6 +903,10 @@ h3
   margin-top 40 * $pixel
   margin-bottom 20 * $pixel
 
+  +$gadgets()
+    margin-top 20 * $pixel-gadgets
+    margin-bottom 20 * $pixel-gadgets
+
 .logo
   width 280 * $pixel
   height 280 * $pixel
@@ -733,15 +916,27 @@ h3
   background-size cover
   box-shadow 0 (3 * $pixel) (3 * $pixel) rgba($colors.dark, 0.3)
 
-$wave-height = 5.4vw
+  +$gadgets()
+    width 180 * $pixel-gadgets
+    height 180 * $pixel-gadgets
+    margin 0 auto 30 * $pixel-gadgets
+    box-shadow 0 (3 * $pixel-gadgets) (3 * $pixel-gadgets) rgba($colors.dark, 0.3)
+
+$wave-height = 105
+$wave-height--mobile = 30
 
 .wave
   width 100vw
-  height $wave-height
-  margin-top -1 * $wave-height
-  transform translateY(3 * $pixel)
+  height $wave-height * $pixel
+  transform translateY(3 * $pixel + -1 * $wave-height * $pixel)
   background url("./assets/images/wave.svg") center bottom no-repeat
   background-size cover
+
+  +$gadgets()
+    background url("./assets/images/wave--gadgets.svg") center bottom no-repeat
+    background-size cover
+    height $wave-height--mobile * $pixel-gadgets
+    transform translateY(-1 * $wave-height--mobile * $pixel-gadgets) scale(1.1)
 
 footer
   position relative
@@ -755,9 +950,10 @@ footer
     color $colors.light
 
   +$gadgets()
-    height 700 * $pixel
+    height 600 * $pixel-gadgets
 
 $forest-height = 10vw
+$forest-height--mobile = 30vw
 
 .pre-footer
   width 100vw
@@ -778,9 +974,19 @@ $forest-height = 10vw
   background url("./assets/images/footer.svg") center bottom no-repeat
   background-size contain
 
+  +$gadgets()
+    height $forest-height--mobile
+    margin-left 0
+    margin-right 0
+    transform translateY(4 * $pixel-gadgets)
+
 .footer
   height "calc(100% - %s)" % $forest-height
   background $colors.green
+
+  +$gadgets()
+    padding-top 80 * $pixel-gadgets
+    height "calc(100% - %s)" % $forest-height--mobile
 
 .footer__logo
   width 180 * $pixel
@@ -790,6 +996,21 @@ $forest-height = 10vw
   border-radius 50%
   background url("./assets/images/logo--mono.svg") center center no-repeat
   background-size cover
+
+  +$gadgets()
+    width 180 * $pixel-gadgets
+    height 180 * $pixel-gadgets
+    margin 0 auto 40 * $pixel-gadgets
+    transform translateY(0)
+
+.sun
+  width 100%
+  height 300 * $pixel
+  background url("./assets/images/sun.svg") center center no-repeat
+  background-size contain
+
+  +$gadgets()
+    display none
 
 .bottom
   background $colors.dark
@@ -806,6 +1027,7 @@ $forest-height = 10vw
   +$gadgets()
     position relative
     z-index 100
+    padding (10 * $pixel-gadgets) (20 * $pixel-gadgets)
 
   &__email,
   &__phone
@@ -816,4 +1038,7 @@ $forest-height = 10vw
     color $colors.light
     text-align center
     $header("crow")
+
+    +$gadgets()
+      display none
 </style>
