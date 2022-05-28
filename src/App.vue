@@ -1054,6 +1054,7 @@ $forest-height--mobile = 30vw
 
     +$gadgets()
       display block
+      text-align left
 
   &--desktop
     +$gadgets()
@@ -1068,6 +1069,10 @@ $forest-height--mobile = 30vw
   &__phone
     color $colors.light
     $header("crow")
+
+  &__phone
+    +$gadgets()
+      float right
 
   &__copy
     color $colors.light
