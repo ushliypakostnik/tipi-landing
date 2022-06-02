@@ -169,7 +169,7 @@
               <div class="card">
                 <div>
                   <h3>Легкий</h3>
-                  <p class="price">21 500<span class="ru" /></p>
+                  <p class="price">15 000<span class="ru" /></p>
                 </div>
                 <ul>
                   <li>Материал тента — Оксфорд 240 Рип Стоп</li>
@@ -193,7 +193,7 @@
               <div class="card">
                 <div>
                   <h3>Стандартный</h3>
-                  <p class="price">24 750<span class="ru" /></p>
+                  <p class="price">75 000<span class="ru" /></p>
                 </div>
                 <ul>
                   <li>Материал тента — Оксфорд 600 Рип Стоп</li>
@@ -218,7 +218,7 @@
               <div class="card">
                 <div>
                   <h3>Фестивальный</h3>
-                  <p class="price">от 40 000<span class="ru" /></p>
+                  <p class="price">94 000<span class="ru" /></p>
                 </div>
                 <ul>
                   <li>Материал тента — Оксфорд 600 Рип Стоп</li>
