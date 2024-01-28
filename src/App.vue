@@ -16,8 +16,8 @@
           'parallax__layer--base': isDesktop,
         }"
       >
-        <a href="mailto:foresthut@obp.ru" class="email">foresthut@obp.ru</a>
-        <a href="tel:+72282652328" class="phone">+7 (228) 265-23-28</a>
+        <a href="mailto:foresthut@obp.ru" class="email">0025050@gmail.com</a>
+        <a href="tel:+79500025050" class="phone">8-950-002-50-50</a>
         <div class="wrapper">
           <div>
             <div class="logo" />
@@ -292,17 +292,17 @@
         :style="`width: calc(100% - ${scrollbarWidth}px)`"
       >
         <a href="mailto:foresthut@obp.ru" class="bottom__email"
-          >foresthut@obp.ru</a
+          >0025050@gmail.com</a
         >
         <div class="bottom__copy">© ООО «Дом в лесу» 2020</div>
-        <a href="tel:+72282652328" class="bottom__phone">+7 (228) 265-23-28</a>
+        <a href="tel:+72282652328" class="bottom__phone">8-950-002-50-50</a>
       </div>
 
       <div class="bottom bottom--gadgets">
         <a href="mailto:foresthut@obp.ru" class="bottom__email"
           >foresthut@obp.ru</a
         >
-        <a href="tel:+72282652328" class="bottom__phone">+7 (228) 265-23-28</a>
+        <a href="tel:+72282652328" class="bottom__phone">8-950-002-50-50</a>
       </div>
     </transition>
   </main>
