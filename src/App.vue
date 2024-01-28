@@ -382,10 +382,6 @@ export default {
 </script>
 
 <style lang="stylus">
-// Import fonts
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-
 // Pure CSS parallax
 .parallax
   perspective 1px
